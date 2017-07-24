@@ -1,5 +1,8 @@
 import cv2
 import numpy as np
+def recognition(img):
+    print("success")
+    return
 
 def video():
     cap = cv2.VideoCapture(0)
@@ -8,7 +11,7 @@ def video():
         # Capture frame-by-frame
         ret, img = cap.read()
 
-        # Our operations on the frame come here
+        # Our operations on the frame come hereq
         gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
         faces = facecascade.detectMultiScale(
             gray,
@@ -18,6 +21,8 @@ def video():
             flags=cv2.CV_FEATURE_PARAMS_HAAR
         )
         print("Found {0} faces!".format(len(faces)))
+        if len(faces)>0:
+            recognition(img)
         # Draw a rectangle around the faces
         for (x, y, w, h) in faces:
             m = (int)(x + w / 2)
