@@ -1,2 +1,3 @@
-import cv2
-cv2.face.createEigenFaceRecognizer()
+from FaceVideo import *
+
+photoTest('images\\s.jpg')
